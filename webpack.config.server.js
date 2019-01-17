@@ -2,6 +2,25 @@ const path = require("path");
 const webpack = require("webpack");
 const CURRENT_WORKING_DIR = process.cwd();
 
-const config = {};
+const config = {
+  entry: [path.join(CURRENT_WORKING_DIR, "./server/server.js")],
+  target: "node",
+  output: {
+    path: path.join(CURRENT_WORKING_DIR, "/dist"),
+    filename: "server.generated.js",
+    publicPath: "/dist/",
+    libraryTarget: "commonjs2"
+  },
+  external: [nodeExternals()],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        user: ["babel-loader"]
+      }
+    ]
+  }
+};
 
 module.exports = config;
