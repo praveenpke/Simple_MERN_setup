@@ -1,3 +1,4 @@
 1. npm install express, mongodb, react
 2. npm install devdependencies nodemon,babel,webpack "--save-dev"
 3.create babelrc file and set up babel for this project
+4.create webpack.config.client.js and webpack.config.server.js and webpack.config.client.production.js files
